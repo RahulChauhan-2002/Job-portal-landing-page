@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Search Jobs</title>
+        <link rel="stylesheet" href="../style.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    </head>
+
+    <body>
+
+        <!-- Header  Section-->
+         <header>
+            <div id="navbar" class="obj-width">
+                <a href="../index.html"><img class="logo"  src="../images/logo.png" alt=""></a>
+                <ul id="menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../jobs/job-details.html">Browse Jobs</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <button id="w-btn">Join</button>
+                </ul>
+                <i id="bar" class='bx bx-menu'></i>
+            </div>
+         </header>
+
+         <div id="jobDetails" class="extra-space obj-width" >
+            
+         </div>
+        <!-- Footer  Section-->
+         <footer class="footer">
+            <div class="obj-width">
+                <div class="top">
+                    <div>
+                        <img class="logo" src="../images/logo.png" alt="">
+                        <p>Search your desiered jobs</p>
+                    </div>
+                    <div>
+                        <a href="https://www.youtube.com/"><i class='bx bxl-youtube' ></i></a>
+                        <a href="https://www.facebook.com/"><i class='bx bxl-facebook-square' ></i></a>
+                        <a href="https://www.instagram.com/"><i class='bx bxl-instagram-alt' ></i></a>
+                        <a href="https://www.twitter.com/"><i class='bx bxl-twitter' ></i></a>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div>
+                        <h3>Project</h3>
+                        <a href="#">Changelog</a>
+                        <a href="#">Status</a>
+                        <a href="#">License</a>
+                        <a href="#">All version</a>
+                    </div>
+                    <div>
+                        <h3>Community</h3>
+                        <a href="#">GitHub</a>
+                        <a href="#">Issues</a>
+                        <a href="#">Project</a>
+                        <a href="#">Twitter</a>
+                    </div>
+                    <div>
+                        <h3>Help</h3>
+                        <a href="#">Support</a>
+                        <a href="#">Troubleshooting</a>
+                        <a href="#">Contact us</a>
+                    </div>
+                    <div>
+                        <h3>Other</h3>
+                        <a href="#">Terms of service</a>
+                        <a href="#">Privacy policy</a>
+                        <a href="#">License</a>
+                    </div>
+                </div>
+            </div>
+         </footer>
+
+         <script>
+            document.addEventListener("DOMContentLoaded",()=>{
+                const urlParam=new URLSearchParams(window.location.search);
+                const index=urlParam.get("id");
+                const selectJob=jCategory[index];
+                const jobDetailsContainer=document.getElementById("jobDetails");
+                jobDetailsContainer.innerHTML=`
+                <div class="job-header">
+                <div class="job-img-row">
+                    <img src=${selectJob.image} alt="">
+                    <div>
+                        <h2>${selectJob.company}</h2>
+                        <span>${selectJob.location}</span>
+                    </div> 
+                </div>
+                <a href="#" id="g-btn">Apply Now</a>
+            </div>
+            
+            <div class="feature obj-width">
+                <div class="fe-box">
+                    <div>
+                        <img src="../images/vacancy.png" alt="">
+                        <h3>Vacancy</h3>
+                        <p>${selectJob.vacancy}</p>
+                    </div>
+                    <div>
+                        <img src="../images/fe 1.png" alt="">
+                        <h3>Position</h3>
+                        <p>${selectJob.av}</p>
+                    </div>
+                    <div>
+                        <img src="../images/hour.png" alt="">
+                        <h3>Hours</h3>
+                        <p>${selectJob.hours}</p>
+                    </div>
+                    <div>
+                        <img src="../images/salary.png" alt="">
+                        <h3>Salary</h3>
+                        <p>${selectJob.rate}</p>
+                    </div>
+                </div>
+             </div>
+
+             <div class="job-description sec-space">
+                <h3>Job Description</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit accusantium neque accusamus ipsum. Fugit possimus facere, nemo recusandae delectus beatae maxime ab reprehenderit sunt eligendi molestias minus temporibus amet autem iure, rem suscipit dolores, veritatis hic quae doloremque in fugiat vero iste? Doloremque officiis ea vel laborum veritatis minus esse.</p>
+                <h3>Employment</h3>
+                <p>-Full time</p>
+                <h3>Workplace</h3>
+                <p>-Work From home</p>
+                <h3>Educational Requirement</h3>
+                <p>-Bachelor Degree in computer Science</p>
+                <h3>Experience Requirement</h3>
+                <p>-2 to 5 years</p>
+             </div>`
+            });
+         </script>
+        <script src="job-list.js"></script>
+        <script src="jobSearch.js"></script>
+        <script src="../script.js"></script>
+    </body>
+
+</html>
